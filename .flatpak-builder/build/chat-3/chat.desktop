@@ -1,0 +1,21 @@
+[Desktop Entry]
+Type=Application
+Name=Chat
+Name[pt]=Chat
+Name[en]=Chat
+Name[es]=Chat
+Name[fr]=Chat
+Name[de]=Chat
+Name[it]=Chat
+Comment=GTK4 client for DuckDuckGo AI
+Comment[pt]=Cliente GTK4 para a IA do DuckDuckGo
+Comment[en]=GTK4 client for DuckDuckGo AI
+Comment[es]=Cliente GTK4 para la IA de DuckDuckGo
+Comment[fr]=Client GTK4 pour l'IA de DuckDuckGo
+Comment[de]=GTK4-Client für die DuckDuckGo-KI
+Comment[it]=Client GTK4 per l'IA di DuckDuckGo
+Exec=chat
+Icon=org.vegeta.Chat
+Terminal=false
+Categories=Utility;
+StartupWMClass=Chat 

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+  <id>org.vegeta.Chat</id>
+  <name>Chat</name>
+  <summary>GTK4 client for DuckDuckGo AI</summary>
+  <developer_name>Henrique Sardinha</developer_name>
+  <description>
+    <p>Aplicativo simples que integra o chat de IA do DuckDuckGo em uma janela nativa GNOME.</p>
+  </description>
+  <launchable type="desktop-id">chat.desktop</launchable>
+  <url type="homepage">https://duckduckgo.com/chat</url>
+  <url type="bugtracker">https://github.com/Henriquehnnm/</url>
+  <icon type="stock">org.vegeta.Chat</icon>
+  <screenshots>
+    <screenshot type="default">
+      <image>https://raw.githubusercontent.com/Henriquehnnm/HydroSuite/main/Chat/screenshot.png</image>
+    </screenshot>
+  </screenshots>
+  <content_rating type="oars-1.1"/>
+  <project_license>GPL-3.0-or-later</project_license>
+  <metadata_license>FSFAP</metadata_license>
+  <categories>
+    <category>Network</category>
+  </categories>
+</component> 

@@ -1,0 +1,8 @@
+# List of source files containing translatable strings.
+# Please keep this file sorted alphabetically.
+data/org.vegeta.Chat.desktop.in
+data/org.vegeta.Chat.metainfo.xml.in
+data/org.vegeta.Chat.gschema.xml
+src/main.py
+src/window.py
+src/window.ui

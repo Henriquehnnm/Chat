@@ -1,0 +1,60 @@
+{
+  "app-id": "org.vegeta.Chat",
+  "runtime": "org.gnome.Platform",
+  "runtime-version": "44",
+  "sdk": "org.gnome.Sdk",
+  "command": "chat",
+  "finish-args": [
+    "--share=network",
+    "--socket=fallback-x11",
+    "--socket=wayland",
+    "--device=dri",
+    "--filesystem=home"
+  ],
+  "modules": [
+    {
+      "name": "webkit2gtk",
+      "buildsystem": "simple",
+      "build-commands": [
+        "echo 'WebKit2GTK already available in runtime'"
+      ],
+      "sources": []
+    },
+    {
+      "name": "chat",
+      "buildsystem": "simple",
+      "build-commands": [
+        "mkdir -p /app/bin",
+        "echo '#!/usr/bin/env python3' > /app/bin/chat",
+        "tail -n +1 main.py >> /app/bin/chat",
+        "chmod +x /app/bin/chat",
+        "install -Dm644 chat.desktop /app/share/applications/org.vegeta.Chat.desktop",
+        "install -Dm644 org.vegeta.Chat.svg /app/share/icons/hicolor/scalable/apps/org.vegeta.Chat.svg",
+        "install -Dm644 org.vegeta.Chat-symbolic.svg /app/share/icons/hicolor/symbolic/apps/org.vegeta.Chat-symbolic.svg",
+        "install -Dm644 org.vegeta.Chat.metainfo.xml /app/share/metainfo/org.vegeta.Chat.metainfo.xml"
+      ],
+      "sources": [
+        {
+          "type": "file",
+          "path": "main.py"
+        },
+        {
+          "type": "file",
+          "path": "chat.desktop"
+        },
+        {
+          "type": "file",
+          "path": "org.vegeta.Chat.svg"
+        },
+        {
+          "type": "file",
+          "path": "org.vegeta.Chat-symbolic.svg"
+        },
+        {
+          "type": "file",
+          "path": "org.vegeta.Chat.metainfo.xml"
+        }
+      ]
+    }
+  ]
+} 

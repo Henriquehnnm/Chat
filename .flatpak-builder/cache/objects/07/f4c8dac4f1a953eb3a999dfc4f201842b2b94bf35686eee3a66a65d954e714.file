@@ -1,0 +1,32 @@
+{
+  "id" : "org.vegeta.Chat",
+  "runtime" : "org.gnome.Platform",
+  "runtime-version" : "44",
+  "runtime-commit" : "27a9dc43ac1447fe7efa61946568730a24a2d2147097fba02904ae9c1fcaf8f6",
+  "sdk" : "org.gnome.Sdk",
+  "sdk-commit" : "5ff43b5270907542af1c0998f95c25ad368fde9912b1c9cb878a96106eabeed9",
+  "command" : "chat",
+  "modules" : [
+    {
+      "name" : "chat",
+      "buildsystem" : "simple",
+      "sources" : [
+        {
+          "path" : "main.py",
+          "type" : "file"
+        }
+      ],
+      "build-commands" : [
+        "install -Dm755 main.py /app/bin/chat"
+      ]
+    }
+  ],
+  "finish-args" : [
+    "--share=network",
+    "--socket=fallback-x11",
+    "--socket=wayland",
+    "--device=dri",
+    "--filesystem=home"
+  ],
+  "source-date-epoch" : 1751201261
+}

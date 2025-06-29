@@ -1,0 +1,62 @@
+{
+  "id" : "org.vegeta.Chat",
+  "runtime" : "org.gnome.Platform",
+  "runtime-version" : "44",
+  "runtime-commit" : "27a9dc43ac1447fe7efa61946568730a24a2d2147097fba02904ae9c1fcaf8f6",
+  "sdk" : "org.gnome.Sdk",
+  "sdk-commit" : "5ff43b5270907542af1c0998f95c25ad368fde9912b1c9cb878a96106eabeed9",
+  "command" : "chat",
+  "modules" : [
+    {
+      "name" : "webkit2gtk",
+      "buildsystem" : "simple",
+      "build-commands" : [
+        "echo 'WebKit2GTK already available in runtime'"
+      ]
+    },
+    {
+      "name" : "chat",
+      "buildsystem" : "simple",
+      "sources" : [
+        {
+          "path" : "main.py",
+          "type" : "file"
+        },
+        {
+          "path" : "chat.desktop",
+          "type" : "file"
+        },
+        {
+          "path" : "org.vegeta.Chat.svg",
+          "type" : "file"
+        },
+        {
+          "path" : "org.vegeta.Chat-symbolic.svg",
+          "type" : "file"
+        },
+        {
+          "path" : "org.vegeta.Chat.metainfo.xml",
+          "type" : "file"
+        }
+      ],
+      "build-commands" : [
+        "mkdir -p /app/bin",
+        "echo '#!/usr/bin/env python3' > /app/bin/chat",
+        "tail -n +1 main.py >> /app/bin/chat",
+        "chmod +x /app/bin/chat",
+        "install -Dm644 chat.desktop /app/share/applications/org.vegeta.Chat.desktop",
+        "install -Dm644 org.vegeta.Chat.svg /app/share/icons/hicolor/scalable/apps/org.vegeta.Chat.svg",
+        "install -Dm644 org.vegeta.Chat-symbolic.svg /app/share/icons/hicolor/symbolic/apps/org.vegeta.Chat-symbolic.svg",
+        "install -Dm644 org.vegeta.Chat.metainfo.xml /app/share/metainfo/org.vegeta.Chat.metainfo.xml"
+      ]
+    }
+  ],
+  "finish-args" : [
+    "--share=network",
+    "--socket=fallback-x11",
+    "--socket=wayland",
+    "--device=dri",
+    "--filesystem=home"
+  ],
+  "source-date-epoch" : 1751203456
+}
